@@ -13,9 +13,10 @@ jobs:
       with:
         main-file: Main.agda
         source-dir: example
+      mv html /html
     - name: Upload HTML
       id: html-upload
       uses: actions/upload-artifact@v1
       with:
-        name: $GITHUB_WORKSPACE/html
-        path: html
+        name: html
+        path: /html
