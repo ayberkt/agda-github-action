@@ -7,7 +7,6 @@ jobs:
     steps:
     - name: "Clone repository"
       uses: actions/cache@v2
-    steps:
     - name: Typechecking step
       id: typecheck
       uses: ayberkt/agda-github-action@master
