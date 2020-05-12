@@ -1,6 +1,6 @@
 # action.yml
 name: 'Agda GitHub action'
-description: 'Foo bar'
+description: 'GitHub action for typechecking your Agda code'
 inputs:
   main-file:
     description: 'Main file of the Agda development'
@@ -9,10 +9,7 @@ inputs:
   source-dir:
     description: 'The name of the directory where your code lives'
     required: true
-    default: example
-outputs:
-  time: # id of output
-    description: 'The time it took to typecheck'
+    default: src
 runs:
   using: 'docker'
   image: 'Dockerfile'

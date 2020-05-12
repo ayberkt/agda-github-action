@@ -3,7 +3,7 @@ on: [push]
 jobs:
   typechecking:
     runs-on: ubuntu-latest
-    name: A job to typecheck your Agda code
+    name: A job to typecheck Agda code
     steps:
     - name: "Clone repository"
       uses: actions/checkout@v2
@@ -13,13 +13,9 @@ jobs:
       with:
         main-file: Main.agda
         source-dir: example
-    - run: ls
-    - run: ls html
-    - run: pwd
-    - run: cp html/Main.html .
     - name: Upload HTML
       id: html-upload
       uses: actions/upload-artifact@v1
       with:
-        name: Main.html
-        path: Main.html
+        name: html
+        path: html

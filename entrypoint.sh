@@ -8,5 +8,3 @@ git clone https://github.com/agda/cubical.git
 mv cubical/Cubical .
 agda --safe $1 || exit 1
 agda --html $1 && mv html ..
-time=$(date)
-echo "::set-output name=time::$time"
