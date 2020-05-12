@@ -10,5 +10,3 @@ jobs:
       uses: ayberkt/agda-github-action@v0
       with:
         main-file: Foo.agda
-    - name: Print Agda version
-      run: agda --version
