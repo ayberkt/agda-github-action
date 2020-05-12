@@ -13,7 +13,7 @@ jobs:
       with:
         main-file: Main.agda
         source-dir: example
-      mv html /html
+      run: mv html /html
     - name: Upload HTML
       id: html-upload
       uses: actions/upload-artifact@v1
