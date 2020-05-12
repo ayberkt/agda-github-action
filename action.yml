@@ -1,16 +1,16 @@
 # action.yml
 name: 'Agda GitHub action'
-description: 'Greet someone and record the time'
+description: 'Foo bar'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  main-file:
+    description: 'Main file of the Agda development'
     required: true
-    default: 'World'
+    default: 'Main.agda'
 outputs:
   time: # id of output
-    description: 'The time we greeted you'
+    description: 'The time it took to typecheck'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.main-file }}
