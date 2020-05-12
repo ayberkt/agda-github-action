@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Typechecking step
       id: typecheck
-      uses: ayberkt/agda-github-action@v-1
+      uses: ayberkt/agda-github-action@v0
       with:
         main-file: Foo.agda
     - name: Get the output time
