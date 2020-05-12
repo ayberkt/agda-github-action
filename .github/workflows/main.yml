@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to typecheck your Agda code
     steps:
+    - name: "Clone repository"
+      uses: actions/cache@v2
+    steps:
     - name: Typechecking step
       id: typecheck
       uses: ayberkt/agda-github-action@master
