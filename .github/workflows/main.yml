@@ -16,9 +16,10 @@ jobs:
     - run: ls
     - run: ls html
     - run: pwd
+    - run: cp html/Main.html .
     - name: Upload HTML
       id: html-upload
       uses: actions/upload-artifact@v1
       with:
         name: html
-        path: html/Main.html
+        path: Main.html
