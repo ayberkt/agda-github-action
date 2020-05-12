@@ -7,6 +7,6 @@ jobs:
     steps:
     - name: Typechecking step
       id: typecheck
-      uses: ayberkt/agda-github-action@v0
+      uses: ayberkt/agda-github-action@v0.1
       with:
         main-file: Foo.agda
