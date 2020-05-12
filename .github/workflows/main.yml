@@ -17,5 +17,5 @@ jobs:
       id: html-upload
       uses: actions/upload-artifact@v1
       with:
-        name: html
+        name: $GITHUB_WORKSPACE/html
         path: html
