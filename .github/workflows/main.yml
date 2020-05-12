@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  typechecking:
+    runs-on: ubuntu-latest
+    name: A job to typecheck your Agda code
+    steps:
+    - name: Typechecking step
+      id: typecheck
+      uses: actions/agda-github-action
+      with:
+        main-file: Foo.agda
+    - name: Get the output time
+      run: echo "The time was ${{ steps.typecheck.outputs.time }}"
