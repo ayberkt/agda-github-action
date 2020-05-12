@@ -14,9 +14,11 @@ jobs:
         main-file: Main.agda
         source-dir: example
     - run: ls
+    - run: ls html
+    - run: pwd
     - name: Upload HTML
       id: html-upload
       uses: actions/upload-artifact@v1
       with:
         name: html
-        path: /html
+        path: html
