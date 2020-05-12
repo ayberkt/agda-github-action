@@ -10,5 +10,5 @@ jobs:
       uses: ayberkt/agda-github-action@v0
       with:
         main-file: Foo.agda
-    - name: Get the output time
-      run: echo "The time was ${{ steps.typecheck.outputs.time }}"
+    - name: Print Agda version
+      run: agda --version
