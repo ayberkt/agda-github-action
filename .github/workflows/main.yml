@@ -6,7 +6,7 @@ jobs:
     name: A job to typecheck your Agda code
     steps:
     - name: "Clone repository"
-      uses: actions/cache@v2
+      uses: actions/checkout@v2
     - name: Typechecking step
       id: typecheck
       uses: ayberkt/agda-github-action@master
