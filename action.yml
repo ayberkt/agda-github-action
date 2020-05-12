@@ -6,6 +6,10 @@ inputs:
     description: 'Main file of the Agda development'
     required: true
     default: 'Main.agda'
+  source-dir:
+    description: 'The name of the directory where your code lives'
+    required: true
+    default: example
 outputs:
   time: # id of output
     description: 'The time it took to typecheck'
@@ -13,4 +17,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.main-file }}
+    - ${{ inputs.main-file  }}
+    - ${{ inputs.source-dir }}
