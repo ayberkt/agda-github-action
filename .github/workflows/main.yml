@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: "Clone repository"
       uses: actions/checkout@v2
-    - runs: ls /root/.agda
+    - run: ls /root/.agda
     - name: Typechecking step
       id: typecheck
       uses: ayberkt/agda-github-action@master
