@@ -8,6 +8,8 @@ wget https://github.com/agda/agda-stdlib/archive/v1.3.tar.gz
 tar -xvf v1.3.tar.gz
 mkdir /root/.agda
 mv v1.3 /root/agda-stdlib
+echo 'standard-library' > /root/.agda/defaults
+echo '/root/agda-stdlib/standard-library.agda-lib' > /root/.agda/libraries
 git clone https://github.com/agda/cubical.git
 mv cubical/Cubical .
 agda --safe $1 || exit 1
