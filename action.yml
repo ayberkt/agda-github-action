@@ -13,7 +13,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  pre-entrypoint: 'setup.sh'
+  pre: 'setup.sh'
   args:
     - ${{ inputs.main-file  }}
     - ${{ inputs.source-dir }}
