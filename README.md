@@ -28,7 +28,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Run Agda
       id: typecheck
-      uses: ayberkt/agda-github-action@v1
+      uses: ayberkt/agda-github-action@v1.1
       with:
         main-file: Foo.agda
         source-dir: src
