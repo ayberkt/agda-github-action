@@ -13,8 +13,8 @@ issue so we can add that feature.
 To be able to use this action, there should be a single file in your Agda
 development that you want to typecheck. If this is not the case, add a new root
 file that imports all the other files you are interested in typechecking.
-Assuming that such a file, say `Foo.agda`, exists, creating file
-`.github/workflows/main.yml` in your repository that has the content:
+Assuming that such a file, say `Foo.agda`, exists, you just need to create a
+file `.github/workflows/main.yml` in your repository that has the content:
 
 ```
 on: [push]
