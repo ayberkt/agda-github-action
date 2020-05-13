@@ -8,6 +8,13 @@ jobs:
     - name: "Clone repository"
       uses: actions/checkout@v2
     - run: ls /root/.agda
+    - name: Install the standard library
+      run: wget https://github.com/agda/agda-stdlib/archive/v1.3.tar.gz
+      run: tar -xvf v1.3.tar.gz
+      run: mkdir /root/.agda
+      run: mv v1.3 /root/agda-stdlib
+      run: echo 'standard-library' > /root/.agda/defaults
+      run: echo '/root/agda-stdlib/standard-library.agda-lib' > /root/.agda/libraries
     - name: Typechecking step
       id: typecheck
       uses: ayberkt/agda-github-action@master
