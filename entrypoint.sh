@@ -17,7 +17,7 @@ mv cubical agda-dir
 
 echo "standard-library"                                          >  agda-dir/defaults
 echo "cubical"                                                   >> agda-dir/defaults
-echo '$(pwd)/agda-dir/agda-stdlib-1.3/standard-library.agda-lib' >  agda-dir/libraries
+echo "$(pwd)/agda-dir/agda-stdlib-1.3/standard-library.agda-lib" >  agda-dir/libraries
 echo "$(pwd)/agda-dir/cubical/cubical.agda-lib"                  >> agda-dir/libraries
 
 export AGDA_DIR=$(pwd)/agda-dir
