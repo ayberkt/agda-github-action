@@ -30,4 +30,4 @@ else
     agda --safe $1 || exit
 fi
 
-agda --html $1 && mv html ..
+agda --html $1
