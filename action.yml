@@ -10,9 +10,14 @@ inputs:
     description: 'The name of the directory where your code lives'
     required: true
     default: src
+  unsafe:
+    description: 'Do not use the --safe flag'
+    required: false
+    default: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.main-file  }}
     - ${{ inputs.source-dir }}
+    - ${{ inputs.unsafe     }}

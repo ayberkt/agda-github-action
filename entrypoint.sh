@@ -22,5 +22,11 @@ echo "$(pwd)/agda-dir/cubical/cubical.agda-lib"                  >> agda-dir/lib
 
 export AGDA_DIR=$(pwd)/agda-dir
 
-agda --safe $1 || exit 1
+if [ "$3" = "true" ]; then
+    echo "Running Agda in unsafe mode."
+    agda $1 || exit 1
+else
+    echo "Running Agda in safe mode."
+    agda --safe $1 || exit
+then
 agda --html $1 && mv html ..
