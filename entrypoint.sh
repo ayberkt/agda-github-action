@@ -28,5 +28,6 @@ if [ "$3" = "true" ]; then
 else
     echo "Running Agda in safe mode."
     agda --safe $1 || exit
-then
+fi
+
 agda --html $1 && mv html ..
