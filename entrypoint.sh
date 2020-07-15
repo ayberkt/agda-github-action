@@ -30,4 +30,12 @@ else
     agda --safe $1 || exit
 fi
 
-agda --html $1
+agda --html --html-highlight=code $1
+
+# Generate HTML from Markdown files.
+
+cd html
+for file in `ls *.md`; do
+    pandoc --css Agda.css -o $(basename -s .md $file).html $file;
+done
+cd ..
