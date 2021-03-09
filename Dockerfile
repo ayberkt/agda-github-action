@@ -1,4 +1,4 @@
-FROM ayberkt/agda:v16
+FROM ayberkt/agda:v17
 
 COPY entrypoint.sh /entrypoint.sh
 
