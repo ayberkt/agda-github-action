@@ -2,6 +2,7 @@
 
 echo "Main file: $1"
 echo "Source directory: $2"
+echo "HTML: $4"
 agda --version
 cd $2
 mkdir agda-dir
@@ -30,12 +31,14 @@ else
     agda --safe $1 || exit
 fi
 
-agda --html --html-highlight=code $1
+if [ "$4" == "true" ]; then
+    echo "Generating HTML from Agda code."
+    agda --html --html-highlight=code $1
 
-# Generate HTML from Markdown files.
-
-cd html
-for file in `ls *.md`; do
-    pandoc --css Agda.css -o $(basename -s .md $file).html $file;
-done
-cd ..
+    # Generate HTML from Markdown files.
+    cd html
+    for file in `ls *.md`; do
+        pandoc --css Agda.css -o $(basename -s .md $file).html $file;
+    done
+    cd ..
+fi

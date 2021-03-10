@@ -14,6 +14,10 @@ inputs:
     description: 'Do not use the --safe flag'
     required: false
     default: false
+  html:
+    description: 'Whether to generate HTML from Agda'
+    required: false
+    default: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -21,3 +25,4 @@ runs:
     - ${{ inputs.main-file  }}
     - ${{ inputs.source-dir }}
     - ${{ inputs.unsafe     }}
+    - ${{ inputs.html       }}
