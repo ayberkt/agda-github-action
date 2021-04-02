@@ -14,6 +14,7 @@ mv agda-stdlib-1.3 agda-dir
 
 # Pull the cubical library.
 git clone https://github.com/agda/cubical.git
+cd cubical && git checkout v0.2 && cd ..
 mv cubical agda-dir
 
 echo "standard-library"                                          >  agda-dir/defaults
