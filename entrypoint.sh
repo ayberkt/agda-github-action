@@ -7,6 +7,8 @@ agda --version
 cd $2
 mkdir agda-dir
 
+export LANG=en_GB.UTF-8
+
 # Pull the standard library.
 wget https://github.com/agda/agda-stdlib/archive/v1.3.tar.gz
 tar -xf v1.3.tar.gz
