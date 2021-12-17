@@ -30,3 +30,4 @@ runs:
     - ${{ inputs.source-dir }}
     - ${{ inputs.unsafe     }}
     - ${{ inputs.html       }}
+    - ${{ inputs.stdlib     }}
