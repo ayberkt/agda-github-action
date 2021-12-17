@@ -6,22 +6,27 @@ echo "HTML: $4"
 agda --version
 ghc --version
 cabal --version
-cd $2
-mkdir agda-dir
+
+pwd
+cd
 
 # Pull the standard library.
 if [ "$5" == true ]; then
     echo "Setting up the standard library"
+
+    mkdir agda-dir
     wget https://github.com/agda/agda-stdlib/archive/v1.7.1.tar.gz
     tar -xf v1.7.1.tar.gz
     mv agda-stdlib-1.7 agda-dir
 
-    echo "standard-library"                                          >  agda-dir/defaults
-    echo "$(pwd)/agda-dir/agda-stdlib-1.3/standard-library.agda-lib" >  agda-dir/libraries
+    echo "standard-library"                                            >  agda-dir/defaults
+    echo "$(pwd)/agda-dir/agda-stdlib-1.7.1/standard-library.agda-lib" >  agda-dir/libraries
     export AGDA_DIR=$(pwd)/agda-dir
 else
   echo "Not setting up the standard library."
 fi
+
+cd $2
 
 if [ "$3" = "true" ]; then
     echo "Running Agda in unsafe mode."
