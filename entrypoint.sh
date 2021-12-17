@@ -9,10 +9,10 @@ cabal --version
 
 cd $2
 
-# Pull the standard library.
 if [ "$5" == true ]; then
     echo "Setting up the standard library"
 
+    # Pull and install the standard library.
     mkdir agda-dir
     wget https://github.com/agda/agda-stdlib/archive/v1.7.1.tar.gz
     tar -xf v1.7.1.tar.gz
