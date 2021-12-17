@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash -l
 
 echo "Main file: $1"
 echo "Source directory: $2"
