@@ -16,7 +16,7 @@ if [ "$5" == true ]; then
     mkdir agda-dir
     wget https://github.com/agda/agda-stdlib/archive/v1.7.1.tar.gz
     tar -xf v1.7.1.tar.gz
-    mv agda-stdlib-1.7 agda-dir
+    mv agda-stdlib-1.7.1 agda-dir
 
     echo "standard-library"                                            >  agda-dir/defaults
     echo "$(pwd)/agda-dir/agda-stdlib-1.7.1/standard-library.agda-lib" >  agda-dir/libraries
