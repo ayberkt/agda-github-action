@@ -7,8 +7,7 @@ agda --version
 ghc --version
 cabal --version
 
-pwd
-cd
+cd $2
 
 # Pull the standard library.
 if [ "$5" == true ]; then
@@ -25,8 +24,6 @@ if [ "$5" == true ]; then
 else
   echo "Not setting up the standard library."
 fi
-
-cd $2
 
 if [ "$3" = "true" ]; then
     echo "Running Agda in unsafe mode."
