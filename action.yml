@@ -18,6 +18,10 @@ inputs:
     description: 'Whether to generate HTML from Agda'
     required: false
     default: true
+  stdlib:
+    description: 'Whether to make a copy of the standard library'
+    required: false
+    default: false
 runs:
   using: 'docker'
   image: 'Dockerfile'

@@ -1,4 +1,6 @@
-{-# OPTIONS --cubical #-}
+{-# OPTIONS --safe #-}
+
+open import Data.Bool
 
 module Main where
 

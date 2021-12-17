@@ -13,6 +13,7 @@ jobs:
       with:
         main-file: Main.agda
         source-dir: example
+        stdlib: true
     - name: Upload HTML
       id: html-upload
       uses: actions/upload-artifact@v1
