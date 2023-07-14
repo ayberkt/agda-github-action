@@ -40,7 +40,14 @@ if [ "$4" == "true" ]; then
     # Generate HTML from Markdown files.
     cd html
     for file in `ls *.md`; do
-        pandoc --css Agda.css -o $(basename -s .md $file).html $file;
+        title=$(basename -s .md $file)
+        pandoc \
+            --embed-resources \
+            --standalone \
+            --css=Agda.css \
+            --metadata title=$title \
+            -o $title.html \
+            $file;
     done
     cd ..
 fi
