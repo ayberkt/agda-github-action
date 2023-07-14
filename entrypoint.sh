@@ -48,6 +48,7 @@ if [ "$4" == "true" ]; then
             --metadata title=$title \
             -o $title.html \
             $file;
+        rm $file
     done
     cd ..
 fi
