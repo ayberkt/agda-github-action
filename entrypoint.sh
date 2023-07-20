@@ -1,15 +1,24 @@
 #!/bin/bash
 
-echo "Main file: $1"
-echo "Source directory: $2"
-echo "HTML: $4"
+main_file=$1
+source_dir=$2
+unsafe=$3
+generate_html=$4
+standard_library=$5
+css_link=$6
+
+echo "Main file: $main_file"
+echo "Source directory: $source_dir"
+echo "HTML: $generate_html"
+echo "CSS: $css_link"
+
 agda --version
 ghc --version
 cabal --version
 
-cd $2
+cd $source_dir
 
-if [ "$5" == true ]; then
+if [ "$standard_library" == true ]; then
     echo "Setting up the standard library"
 
     # Pull and install the standard library.
@@ -25,17 +34,21 @@ else
   echo "Not setting up the standard library."
 fi
 
-if [ "$3" = "true" ]; then
+if [ "$unsafe" = "true" ]; then
     echo "Running Agda in unsafe mode."
-    agda $1 || exit 1
+    agda $main_file || exit 1
 else
     echo "Running Agda in safe mode."
-    agda --safe $1 || exit
+    agda --safe $main_file || exit
 fi
 
-if [ "$4" == "true" ]; then
+if [ "$generate_html" == "true" ]; then
     echo "Generating HTML from Agda code."
-    agda --html --html-highlight=auto $1
+    if [ "$css_link" == "Agda.css" ]; then
+        agda --html --html-highlight=auto $main_file
+    else
+        agda --html --html-highlight=auto --css=$css_link $main_file
+    fi
 
     # Generate HTML from Markdown files.
     cd html
@@ -43,7 +56,7 @@ if [ "$4" == "true" ]; then
         title=$(basename -s .md $file)
         pandoc \
             --standalone \
-            --css=Agda.css \
+            --css=$css_link \
             --metadata title=$title \
             -o $title.html \
             $file;
