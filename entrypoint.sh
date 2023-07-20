@@ -42,7 +42,6 @@ if [ "$4" == "true" ]; then
     for file in `ls *.md`; do
         title=$(basename -s .md $file)
         pandoc \
-            --embed-resources \
             --standalone \
             --css=Agda.css \
             --metadata title=$title \
