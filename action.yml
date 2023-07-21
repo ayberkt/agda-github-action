@@ -1,33 +1,39 @@
 # action.yml
-name: 'Agda GitHub action'
-description: 'GitHub action for typechecking your Agda code'
+name: "Agda GitHub action"
+description: "GitHub action for typechecking your Agda code"
 inputs:
   main-file:
-    description: 'Main file of the Agda development'
+    description: "Main file of the Agda development"
     required: true
-    default: 'Main.agda'
+    default: "Main.agda"
   source-dir:
-    description: 'The name of the directory where your code lives'
+    description: "The name of the directory where your code lives"
     required: true
     default: src
   unsafe:
-    description: 'Do not use the --safe flag'
+    description: "Do not use the --safe flag"
     required: false
     default: false
   html:
-    description: 'Whether to generate HTML from Agda'
+    description: "Whether to generate HTML from Agda"
     required: false
     default: true
   stdlib:
-    description: 'Whether to make a copy of the standard library'
+    description: "Whether to make a copy of the standard library"
     required: false
     default: false
+  css:
+    description: "Location of custom CSS to use"
+    required: false
+    default: Agda.css
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.main-file  }}
     - ${{ inputs.source-dir }}
     - ${{ inputs.unsafe     }}
     - ${{ inputs.html       }}
     - ${{ inputs.stdlib     }}
+    - ${{ inputs.css     }}
