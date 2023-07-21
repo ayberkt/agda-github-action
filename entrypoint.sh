@@ -43,11 +43,18 @@ else
 fi
 
 if [ "$generate_html" == "true" ]; then
-    echo "Generating HTML from Agda code."
-    if [ "$css_link" == "Agda.css" ]; then
+    echo "Generating HTML from Agda code with CSS $css_link."
+    if [ "$css_link" == "" ]; then
         agda --html --html-highlight=auto $main_file
     else
         agda --html --html-highlight=auto --css=$css_link $main_file
+        test -f $css_link
+        if [ -f $css_link ]; then
+            cp $css_link html/
+            css_name=$(basename $css_link)
+        else
+            css_name=$css_link
+        fi
     fi
 
     # Generate HTML from Markdown files.
@@ -56,7 +63,7 @@ if [ "$generate_html" == "true" ]; then
         title=$(basename -s .md $file)
         pandoc \
             --standalone \
-            --css=$css_link \
+            --css=$css_name \
             --metadata title=$title \
             -o $title.html \
             $file;

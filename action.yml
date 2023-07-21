@@ -23,9 +23,8 @@ inputs:
     required: false
     default: false
   css:
-    description: "Location of custom CSS to use"
+    description: "Location of custom CSS to use. If using a relative path, must be relative to the source directory."
     required: false
-    default: Agda.css
 
 runs:
   using: "docker"
