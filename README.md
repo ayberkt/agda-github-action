@@ -34,7 +34,7 @@ jobs:
         source-dir: src
     - name: Upload HTML
       id: html-upload
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v3
       with:
         name: html
         path: html
