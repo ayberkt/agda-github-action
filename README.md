@@ -42,3 +42,9 @@ jobs:
 
 So, you provide two arguments to this action: the name of your root file and the
 directory in which that file lives (e.g., `src`).
+
+## Versions
+
+| Version | Agda version used |
+| ------- | ----------------- |
+| `v3.4`  | `2.6.4`           |
