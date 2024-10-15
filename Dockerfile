@@ -1,4 +1,4 @@
-FROM ayberkt/agda-new:v2.2
+FROM ayberkt/agda-new:v2.3
 
 COPY entrypoint.sh /entrypoint.sh
 COPY get_pandoc.sh /get_pandoc.sh
