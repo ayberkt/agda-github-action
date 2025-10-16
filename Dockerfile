@@ -1,11 +1,6 @@
-FROM ayberkt/agda-new:v2.3
+FROM ltchentw/agda:2.7.0.1-no-emacs
 
 COPY entrypoint.sh /entrypoint.sh
-COPY get_pandoc.sh /get_pandoc.sh
-
-RUN ["chmod", "+x", "/get_pandoc.sh"]
-RUN ["./get_pandoc.sh"]
-
 RUN ["chmod", "+x", "/entrypoint.sh"]
 
 ENTRYPOINT ["/entrypoint.sh"]
