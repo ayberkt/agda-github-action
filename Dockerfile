@@ -1,4 +1,4 @@
-FROM ghcr.io/ayberkt/docker-agda:v1.0.0
+FROM ghcr.io/ayberkt/docker-agda:latest
 
 COPY entrypoint.sh /entrypoint.sh
 
