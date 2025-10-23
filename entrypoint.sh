@@ -23,12 +23,12 @@ if [ "$standard_library" == true ]; then
 
     # Pull and install the standard library.
     mkdir agda-dir
-    wget https://github.com/agda/agda-stdlib/archive/v1.7.1.tar.gz
-    tar -xf v1.7.1.tar.gz
+    wget https://github.com/agda/agda-stdlib/archive/refs/tags/v2.3.tar.gz
+    tar -xf v2.3.tar.gz
     mv agda-stdlib-1.7.1 agda-dir
 
-    echo "standard-library"                                            >  agda-dir/defaults
-    echo "$(pwd)/agda-dir/agda-stdlib-1.7.1/standard-library.agda-lib" >  agda-dir/libraries
+    echo "standard-library"                                          >  agda-dir/defaults
+    echo "$(pwd)/agda-dir/agda-stdlib-2.3/standard-library.agda-lib" >  agda-dir/libraries
     export AGDA_DIR=$(pwd)/agda-dir
 else
   echo "Not setting up the standard library."
