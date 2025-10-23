@@ -28,7 +28,7 @@ if [ "$standard_library" == true ]; then
     mv agda-stdlib-v2.3 agda-dir
 
     echo "standard-library"                                          >  agda-dir/defaults
-    echo "$(pwd)/agda-dir/agda-stdlib-2.3/standard-library.agda-lib" >  agda-dir/libraries
+    echo "$(pwd)/agda-dir/agda-stdlib-v2.3/standard-library.agda-lib" >  agda-dir/libraries
     export AGDA_DIR=$(pwd)/agda-dir
 else
   echo "Not setting up the standard library."
