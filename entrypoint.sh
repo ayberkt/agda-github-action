@@ -45,9 +45,9 @@ fi
 if [ "$generate_html" == "true" ]; then
     echo "Generating HTML from Agda code with CSS $css_link."
     if [ "$css_link" == "" ]; then
-        agda --html --html-highlight=auto $main_file
+        agda --html --highlight-occurrences $main_file
     else
-        agda --html --html-highlight=auto --css=$css_link $main_file
+        agda --html --highlight-occurrences --css=$css_link $main_file
         test -f $css_link
         if [ -f $css_link ]; then
             cp $css_link html/
@@ -56,18 +56,7 @@ if [ "$generate_html" == "true" ]; then
             css_name=$css_link
         fi
     fi
-
-    # Generate HTML from Markdown files.
-    cd html
-    for file in `ls *.md`; do
-        title=$(basename -s .md $file)
-        pandoc \
-            --standalone \
-            --css=$css_name \
-            --metadata title=$title \
-            -o $title.html \
-            $file;
-        rm $file
-    done
-    cd ..
 fi
+
+echo "Copying Agda.css"
+cp ../assets/Agda.css html/Agda.css
