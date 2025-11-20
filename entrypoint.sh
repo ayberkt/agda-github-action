@@ -60,3 +60,6 @@ fi
 
 echo "Copying Agda.css"
 cp ../assets/Agda.css html/Agda.css
+
+echo "Creating symlinks of HTML files..."
+../admin-utilities/create_html_copies
