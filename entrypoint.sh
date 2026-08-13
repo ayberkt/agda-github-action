@@ -42,7 +42,9 @@ else
     agda --safe $main_file || exit
 fi
 
-./admin-utilities/agda-html.py --css assets/Agda.css
+mkdir html
+./admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --out html
+
 
 echo "Creating symlinks of HTML files..."
 ../admin-utilities/create_html_copies
