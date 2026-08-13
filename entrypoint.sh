@@ -44,7 +44,7 @@ fi
 
 cd ..
 mkdir html
-./admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --out html
+python3 admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --out html
 
 
 echo "Creating symlinks of HTML files..."
