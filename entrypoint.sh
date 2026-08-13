@@ -42,24 +42,7 @@ else
     agda --safe $main_file || exit
 fi
 
-if [ "$generate_html" == "true" ]; then
-    echo "Generating HTML from Agda code with CSS $css_link."
-    if [ "$css_link" == "" ]; then
-        agda --html --highlight-occurrences $main_file
-    else
-        agda --html --highlight-occurrences --css=$css_link $main_file
-        test -f $css_link
-        if [ -f $css_link ]; then
-            cp $css_link html/
-            css_name=$(basename $css_link)
-        else
-            css_name=$css_link
-        fi
-    fi
-fi
-
-echo "Copying Agda.css"
-cp ../assets/Agda.css html/Agda.css
+./admin-utilities/agda-html.py --css assets/Agda.css
 
 echo "Creating symlinks of HTML files..."
 ../admin-utilities/create_html_copies
