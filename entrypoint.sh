@@ -42,6 +42,7 @@ else
     agda --safe $main_file || exit
 fi
 
+cd ..
 mkdir html
 ./admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --out html
 
