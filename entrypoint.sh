@@ -48,4 +48,4 @@ python3 admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --ou
 
 
 echo "Creating symlinks of HTML files..."
-../admin-utilities/create_html_copies
+admin-utilities/create_html_copies
