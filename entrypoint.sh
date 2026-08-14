@@ -40,9 +40,16 @@ else
     agda --safe $main_file || exit
 fi
 
+cd ..
 mkdir html
-./admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --out html
+python3 admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --out html || exit 1
+python3 admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --out html --check
 
+if [ "$?" = "true" ]; then
+    echo "Verified HTML with `agda-html.py --check`"
+else
+    echo "Verification attempt with `agda-html.py --check` failed" || exit 1
+fi
 
 echo "Creating symlinks of HTML files..."
-../admin-utilities/create_html_copies
+admin-utilities/create_html_copies
