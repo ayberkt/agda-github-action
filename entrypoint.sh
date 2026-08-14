@@ -46,9 +46,9 @@ python3 admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --ou
 python3 admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --out html --check
 
 if [ "$?" = "true" ]; then
-    echo "Verified HTML with `agda-html.py --check`"
+    echo "Verified HTML with 'agda-html.py --check'"
 else
-    echo "Verification attempt with `agda-html.py --check` failed" || exit 1
+    echo "Verification attempt with 'agda-html.py --check' failed" || exit 1
 fi
 
 echo "Creating symlinks of HTML files..."
