@@ -13,8 +13,6 @@ echo "HTML: $generate_html"
 echo "CSS: $css_link"
 
 agda --version
-ghc --version
-cabal --version
 
 cd $source_dir
 
