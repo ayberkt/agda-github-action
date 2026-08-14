@@ -42,7 +42,6 @@ fi
 
 cd ..
 mkdir html
-python3 admin-utilities/agda-html.py --typetopology . --css assets/Agda.css --out html || exit 1
 
 python3 admin-utilities/agda-html.py \
     --typetopology . \
