@@ -34,10 +34,10 @@ fi
 
 if [ "$unsafe" = "true" ]; then
     echo "Running Agda in unsafe mode."
-    agda $main_file || exit 1
+    agda --safe $main_file -j +RTS -A64M -qb0 || exit 1
 else
     echo "Running Agda in safe mode."
-    agda --safe $main_file || exit
+    agda --safe $main_file -j +RTS -A64M -qb0  || exit
 fi
 
 cd ..
